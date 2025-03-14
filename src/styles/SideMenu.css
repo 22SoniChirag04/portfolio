@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #4a90e2;
+    --dark-bg: #1e1e2f;
+    --light-bg: #252542;
+    --text-color: #ffffff;
+    --hover-color: #4a90e2;
+}
+
+.sidebar {
+    background: var(--dark-bg);
+    height: 100vh;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 70px;
+}
+
+/* Expanded Sidebar */
+.sidebar.expanded {
+    width: 250px;
+}
+
+/* Sidebar Header (Fixed at the Top) */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Menu Icon */
+.menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Menu Items */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar-menu li:hover {
+    background: var(--hover-color);
+}
+
+.sidebar-menu li svg {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Hide Text when Sidebar is Collapsed */
+.sidebar.collapsed .sidebar-menu li span {
+    display: none;
+}
+
+/* 🔥 Responsive */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar.expanded {
+        width: 200px;
+    }
+}

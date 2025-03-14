@@ -1,0 +1,163 @@
+/* 🌈 Color Variables */
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover: #357ac8;
+    --background-gradient: linear-gradient(-45deg, #1e3c72, #2a5298, #4a90e2, #1e3c72);
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --subtext-color: rgba(255, 255, 255, 0.8);
+    --error-color: #ff4d4d;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--background-gradient);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 🔥 Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 📌 Register Container */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 🌟 Glassmorphic Register Card */
+.register-card {
+    background: var(--glass-bg);
+    padding: 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🏆 Register Title */
+.register-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+}
+
+/* ⚠️ Error Message */
+.error-message {
+    font-size: 1rem;
+    color: var(--error-color);
+    margin-bottom: 15px;
+}
+
+/* 📩 Input Fields */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 👁 Password Visibility Icon */
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease-in-out;
+}
+
+.eye-icon:hover {
+    color: var(--text-color);
+}
+
+/* 🚀 Buttons */
+.register-button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.register-button:hover {
+    background: var(--primary-hover);
+    transform: scale(1.07);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* 🌟 Login Text */
+.login-text {
+    font-size: 1rem;
+    color: white;
+}
+
+.login-text a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.login-text a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
