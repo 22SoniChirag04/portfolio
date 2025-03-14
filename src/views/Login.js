@@ -35,7 +35,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h1 className="login-title">Sign In</h1>
+        <h1 className="login-title">Sign In Chirag Soni</h1>
 
         {error && <p className="error-message">{error}</p>}
 
