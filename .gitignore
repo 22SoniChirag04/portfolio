@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 .vercel
+
+node_modules
+build
+.vscode
+.DS_Store
+.env
+.vercel
