@@ -27,7 +27,7 @@ export default function Login() {
       navigate("/home");
     } else {
       setError(result.message);
-      navigate("/dashboard");
+      navigate("/chirabyte");
 
     }
   };

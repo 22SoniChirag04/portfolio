@@ -15,14 +15,14 @@ export default function SideMenu() {
       className={`sidebar ${isOpen ? "expanded" : "collapsed"}`}
       initial={{ width: "70px" }}
       animate={{ width: isOpen ? "250px" : "70px" }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      transition={{ duration: 0.1, ease: "easeInOut" }}
     >
       {/* Sidebar Header with Animated Icon */}
       <div className="sidebar-header" onClick={toggleSidebar}>
         <motion.div
           className="menu-icon"
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.1 }}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </motion.div>
@@ -41,7 +41,7 @@ export default function SideMenu() {
             onClick={() => navigate(item.path)}
             initial={{ opacity: 0 }}
             animate={{ opacity: isOpen ? 1 : 0 }}
-            transition={{ duration: 0.3, delay: isOpen ? index * 0.1 : 0 }}
+            transition={{ duration: 0.1, delay: isOpen ? index * 0.1 : 0 }}
           >
             {item.icon}
             {isOpen && <span>{item.name}</span>}
