@@ -27,7 +27,7 @@ export default function Login() {
       navigate("/home");
     } else {
       setError(result.message);
-      navigate("/home");
+      navigate("/dashboard");
 
     }
   };
