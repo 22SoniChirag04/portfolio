@@ -9,8 +9,12 @@ const ChatView = () => {
   const chatEndRef = useRef(null);
 
   // Auto-scroll to the latest message
-  useEffect(() => {
+  const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
   }, [messages]);
 
   const handleSend = () => {
@@ -24,6 +28,14 @@ const ChatView = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !isGenerating) handleSend();
   };
+
+  // Handle keyboard open/close resizing
+  useEffect(() => {
+    const handleResize = () => scrollToBottom();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Format response content
   const formatMessage = (text) => {
