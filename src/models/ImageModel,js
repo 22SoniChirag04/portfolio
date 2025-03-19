@@ -1,0 +1,28 @@
+// src/models/ImageModel.js
+import { post } from "../services/apiService";
+import { API_ENDPOINTS } from "../config/apiConfig";
+
+const API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+
+const ImageModel = {
+  generateImage: async (prompt) => {
+    const endpoint = `${API_ENDPOINTS.GEMINI_IMAGE_GEN}?key=${API_KEY}`;
+    const payload = {
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { responseModalities: ["Image"] },
+    };
+
+    try {
+      const response = await post(endpoint, payload);
+      const base64Image = response?.data;
+      if (base64Image) {
+        return `data:image/png;base64,${base64Image}`;
+      }
+      return "Failed to generate image.";
+    } catch (error) {
+      return error.message;
+    }
+  },
+};
+
+export default ImageModel;

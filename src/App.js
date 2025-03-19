@@ -7,6 +7,7 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import Dashboard from "./views/Dashboard";
 import ChatView from "./views/ChatView";
+import PromptView from "./views/PromptView";
  
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
     <div>
       {/* <Navbar /> */}
       <Routes>
-      <Route path="/" element={<Navigate to="/chirabyte" />} /> {/* Redirect root to login */}
+      <Route path="/" element={<Navigate to="/home" />} /> {/* Redirect root to home screen */}
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/chirabyte" element={<ChatView />} />
+        <Route path="/image-generator" element={<PromptView />} />
 
       </Routes>
     </div>

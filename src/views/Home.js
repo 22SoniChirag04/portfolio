@@ -1,12 +1,35 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
+import "../styles/Home.css";
 
-export default function Home() {
+const Home = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <Navbar />
-      <h1 className="text-3xl font-bold">Welcome to My Portfolio</h1>
-      <p className="text-lg mt-2">This is the home page.</p>
+    <div className="container">
+      <h1 className="title">Welcome to Chirabyte AI Tools</h1>
+      <p className="description">Empowering your creativity with smart AI solutions.</p>
+      <div className="button-group">
+        <button
+          className="option-btn"
+          onClick={() => navigate("/chirabyte")}
+        >
+          ✨ AI Ask Anything...
+        </button>
+        <button
+          className="option-btn"
+          onClick={() => navigate("/image-generator")}
+        >
+          🎨 AI Image Generator...
+        </button>
+
+        <footer className="footer">Made with ❤️ by Chirabyte Team</footer>
+
+      </div>
+      
     </div>
   );
-}
+};
+
+export default Home;
+
